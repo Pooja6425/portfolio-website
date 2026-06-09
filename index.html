@@ -229,14 +229,13 @@
      </span>
      </div>
      <div class="contact-form">
-        <form>
-  <input type="text" id="name" name="Name" placeholder="Your Name" autocomplete="off">
-  <input type="email" id="email" name="Email" placeholder="Your Email" autocomplete="off">
-  <textarea id="msg" name="Message" placeholder="Your Message" rows="6" autocomplete="off"></textarea>
-  <button onclick="sendMsg()">Send <i class="fa-solid fa-paper-plane"></i></button>
+        <form id="contactForm">
+  <input type="text" id="name" name="Name" placeholder="Your Name" autocomplete="off" required>
+  <input type="email" id="email" name="Email" placeholder="Your Email" autocomplete="off" required>
+  <textarea id="msg" name="Message" placeholder="Your Message" rows="6" autocomplete="off" required></textarea>
+  <button type="submit">Send <i class="fa-solid fa-paper-plane"></i></button>
   
   </form>
-<div id="toast">Message sent successfully!</div>
   </div>
 </section>
 <footer>

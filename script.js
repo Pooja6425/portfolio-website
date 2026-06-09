@@ -1,24 +1,3 @@
-
-function showToast(message, type) {
-    const toast = document.getElementById("toast");
-
-    toast.textContent = message;
-    toast.className = `show ${type}`;
-
-    setTimeout(() => {
-        toast.classList.remove("show");
-    }, 3000);
-}
-function sendMsg() {
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-
-    if (name === "" || email === "") {
-        showToast("Please fill all fields");
-    } else {
-        showToast("Message sent successfully!");
-    }
-}
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-menu a");
 
@@ -73,7 +52,7 @@ form.addEventListener("submit", async (e) => {
   const data = {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
-    message: document.getElementById("message").value
+    message: document.getElementById("msg").value
   };
 
   try {
