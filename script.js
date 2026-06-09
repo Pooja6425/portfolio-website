@@ -65,3 +65,37 @@ document.querySelectorAll(".nav-menu a").forEach(link => {
         icon.classList.add("fa-bars");
     });
 });
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value
+  };
+
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbyaa125rDGxGKI0jFJzAwpb-c4HjZD22j5BK_iY0i3AC8viJsxyJF78IxrJEBjD1lCHWQ/exec", {
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+
+    showToast("Message sent successfully!");
+
+    form.reset();
+
+  } catch (error) {
+    showToast("Failed to send message!");
+  }
+});
+function showToast(msg){
+    const toast = document.getElementById("toast");
+    toast.textContent = msg;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
+}
